@@ -12,21 +12,41 @@ request.onload = function(){
     populateHeader(data);
     
 }
-
+var answers;
 function populateHeader(jsonObj){
     var myQuestion = document.createElement('h3');
     myQuestion.textContent = jsonObj['question'];
     header.appendChild(myQuestion);
 
-    var answers = jsonObj['answers'];
+
+    my_form=document.createElement('FORM');
+    my_form.name='myForm';
+    my_form.method='POST';
+    answers = jsonObj['answers'];
     for (var i=0; i < answers.length; i++){
-        var q = q + i.toString();
-        var q = document.createElement('p');
-        q.textContent = answers[i];
+        var listItem = "";
+        listItem = answers[i]['answer' + [i+1].toString()];
+        // section.html('');
+        // var result = document.getElementById('result');
+        // result.html('');
+        // var radio = document.createElement('input');
+        
+        // var listItem = document.createElement('li');
+        var radio = document.createElement('input');
+        radio.type = "radio";
+        radio.name = "answer";
+        radio.id = listItem;
+        var text = listItem;
+        // var label = ('<label><input type="radio" name="usernames" value="' + listItem + '" /> ' + listItem + '</label>');
+        my_form.appendChild(radio);
+        my_form.appendChild(document.createTextNode(text));
+        // var q = t + i.toString();
+        // var q = document.createElement('p');
+        // q.textContent = answers[i];
         // var q2 = document.createElement('p');
         // var q3 = document.createElement('p');
         // var q4 = document.createElement('p');
-        section.appendChild(q);
+        section.append(my_form);
         
 
     } 
