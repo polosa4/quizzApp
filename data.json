@@ -1,7 +1,3 @@
- 
-
-// data = '[{"name" : "Harry", "age" : "32"}]';
- 
  {
     "question": "How old are you",
     "answers": [

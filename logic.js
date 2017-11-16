@@ -1,5 +1,38 @@
 var header = document.querySelector('header');
 var section = document.querySelector('section');
+
+var requestURL = 'https://polosa4.github.io/quizzApp/data.json';
+var request = new XMLHttpRequest();
+request.open('GET', requestURL);
+request.responseType = 'json';
+request.send();
+
+request.onload = function(){
+    var data = request.response;
+    populateHeader(data);
+    
+}
+
+function populateHeader(jsonObj){
+    var myQuestion = document.createElement('h3');
+    myQuestion.textContent = jsonObj['question'];
+    header.appendChild(myQuestion);
+
+    var answers = jsonObj['answers'];
+    for (var i=0; i < answers.length; i++){
+        var q = q + i.toString();
+        var q = document.createElement('p');
+        q.textContent = answers[i];
+        // var q2 = document.createElement('p');
+        // var q3 = document.createElement('p');
+        // var q4 = document.createElement('p');
+        section.appendChild(q);
+        
+
+    } 
+
+}
+
 // JSONObject jsonObject = new JSONObject();
 // function load() {
 //     var mydata = JSON.parse(data);
@@ -20,7 +53,7 @@ var section = document.querySelector('section');
 //         };
 //         xobj.send(null);  
 //     }
-
+ 
 //     loadJSON(function(response) {
 //         // Do Something with the response e.g.
 //         jsonresponse = JSON.parse(response);
@@ -29,28 +62,3 @@ var section = document.querySelector('section');
 //         console.log(jsonresponse[0].question);
     
 //     });
-function loadJSON(callback) {
-var xobj = new XMLHttpRequest();
-xobj.overrideMimeType("application/json");
-xobj.open('GET', 'data.json', true);
-xobj.onreadystatechange = function () {
-if (xobj.readyState == 4 && xobj.status == "200") {
-
-// .open will NOT return a value but simply returns undefined in async mode so use a callback
-callback(xobj.responseText);
-
-}
-}
-xobj.send(null);
-
-}
-
-// Call to function with anonymous callback
-loadJSON(function(response) {
-// Do Something with the response e.g.
-jsonresponse = JSON.parse(response);
-
-// Assuming json data is wrapped in square brackets as Drew suggests
-console.log(jsonresponse[0].name);
-
-});
