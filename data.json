@@ -1,0 +1,22 @@
+ 
+
+// data = '[{"name" : "Harry", "age" : "32"}]';
+ 
+ {
+    "question": "How old are you",
+    "answers": [
+      {
+        "answer1": "28"
+      },
+      {
+        "answer2": "27"        
+      },
+      {
+        "answer3": "21"  
+      },
+      {
+        "answer4": "44"
+      }
+    ]
+  }
+
