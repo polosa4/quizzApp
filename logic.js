@@ -22,6 +22,8 @@ function populateHeader(jsonObj){
     my_form=document.createElement('FORM');
     my_form.name='myForm';
     my_form.method='POST';
+    button = document.createElement('button');
+    button.
     answers = jsonObj['answers'];
     for (var i=0; i < answers.length; i++){
         var listItem = "";
@@ -35,10 +37,14 @@ function populateHeader(jsonObj){
         var radio = document.createElement('input');
         radio.type = "radio";
         radio.name = "answer";
-        radio.id = listItem;
+        radio.value = listItem;
+        var button = document.createElement('input');
+        button.type = "submit";
+        button.value = "Submit";
         var text = listItem;
         // var label = ('<label><input type="radio" name="usernames" value="' + listItem + '" /> ' + listItem + '</label>');
         my_form.appendChild(radio);
+        my_form.appendChild(button);
         my_form.appendChild(document.createTextNode(text));
         // var q = t + i.toString();
         // var q = document.createElement('p');
