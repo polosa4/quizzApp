@@ -1,21 +1,22 @@
- {
-    "question": "How old are you",
-    "answers": [
-      {
-        "answer1": "a.28"
-      },
-      {
-        "answer2": "b.27"        
-      },
-      {
-        "answer3": "c.21"  
-      },
-      {
-        "answer4": "d.44"
+ { "mult":{
+        "question": "How old are you",
+        "answers": [
+          {
+            "answer1": "a.28"
+          },
+          {
+            "answer2": "b.27"        
+          },
+          {
+            "answer3": "c.21"  
+          },
+          {
+            "answer4": "d.44"
+          }
+        
+          
+        ],
+        "correctA": "a.28"
       }
-    
-      
-    ],
-    "correctA": "a.28"
   }
 

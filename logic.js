@@ -8,10 +8,11 @@ request.responseType = 'json';
 request.send();
 
 request.onload = function(){
-    var data = request.response;
+    data = request.response;
     populateHeader(data);
     
 }
+var data;
 var answers;
 function populateHeader(jsonObj){
     var myQuestion = document.createElement('h3');
@@ -23,7 +24,6 @@ function populateHeader(jsonObj){
     my_form.name='myForm';
     my_form.method='POST';
     button = document.createElement('button');
-    button.
     answers = jsonObj['answers'];
     for (var i=0; i < answers.length; i++){
         var listItem = "";
@@ -38,13 +38,10 @@ function populateHeader(jsonObj){
         radio.type = "radio";
         radio.name = "answer";
         radio.value = listItem;
-        var button = document.createElement('input');
-        button.type = "submit";
-        button.value = "Submit";
         var text = listItem;
         // var label = ('<label><input type="radio" name="usernames" value="' + listItem + '" /> ' + listItem + '</label>');
         my_form.appendChild(radio);
-        my_form.appendChild(button);
+        // my_form.appendChild(button);
         my_form.appendChild(document.createTextNode(text));
         // var q = t + i.toString();
         // var q = document.createElement('p');
@@ -57,6 +54,22 @@ function populateHeader(jsonObj){
 
     } 
 
+    // var button = document.createElement('input');
+    // button.type = "submit";
+    // button.value = "Submit";
+
+}
+
+
+function getValue(){
+    var correctAnswer = data["correctA"];
+    $('input[name="answer"]:checked').each(function() {
+        if (this.value == correctAnswer)
+        console.log("Your answer is correct");
+        else 
+        console.log("Try again");
+    
+    });
 }
 
 // JSONObject jsonObject = new JSONObject();
