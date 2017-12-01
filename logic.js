@@ -59,6 +59,9 @@ function populateHeader(jsonObj){
     // button.value = "Submit";
 
 }
+var questionCounter; 
+
+
 
 
 function getValue(){
