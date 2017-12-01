@@ -1,24 +1,43 @@
  { 
-   "mult":{
-            "question": "How old are you",
+   "mult":[{
+              "question": "How old are you",
+              "answers": [
+                {
+                  "answer1": "a.28"
+                },
+                {
+                  "answer2": "b.27"        
+                },
+                {
+                  "answer3": "c.21"  
+                },
+                {
+                  "answer4": "d.44"
+                }
+              
+                
+              ],
+              "correctA": "a.28"
+          },
+          {
+            "question": "How tall are you",
             "answers": [
               {
-                "answer1": "a.28"
+                "answer1": "a.5,7"
               },
               {
-                "answer2": "b.27"        
+                "answer2": "b.2,7"        
               },
               {
-                "answer3": "c.21"  
+                "answer3": "c.6,0"  
               },
               {
-                "answer4": "d.44"
+                "answer4": "d.6,5"
               }
             
               
             ],
-            "correctA": "a.28",
-            "correctB": "a.28"
+            "correctA": "a.5,7"
           }
-  }
+ ]}
 

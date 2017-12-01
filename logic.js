@@ -24,7 +24,7 @@ function populateHeader(jsonObj){
     my_form.name='myForm';
     my_form.method='POST';
     button = document.createElement('button');
-    answers = jsonObj['answers'];
+    answers = jsonObj.mult['answers'];
     for (var i=0; i < answers.length; i++){
         var listItem = "";
         listItem = answers[i]['answer' + [i+1].toString()];
@@ -59,19 +59,25 @@ function populateHeader(jsonObj){
     // button.value = "Submit";
 
 }
-var questionCounter; 
+var questionCounter = 0; 
+function switchAnswer() {
 
+    for (var i = questionCounter; i < data.mult.length; i++ ){
+        return questionCounter++; 
+    }
+
+}
 
 
 
 function getValue(){
-    var correctAnswer = data["correctA"];
+    var correctAnswer = data.mult[questionCounter]["correctA"];
     $('input[name="answer"]:checked').each(function() {
         if (this.value == correctAnswer)
         console.log("Your answer is correct");
         else 
         console.log("Try again");
-    
+        switchAnswer();
     });
 }
 
